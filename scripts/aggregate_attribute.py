@@ -106,7 +106,7 @@ def extract_config_and_levels(lines: List[str], file: str) -> dict:
 
                     name_match = re.search(r'name\s*=\s*["\'](\w+)["\']', attribute_block)
                     #levels_match = re.search(r'levels\s*=\s*(\[.*?\])', attribute_block)
-                    levels_match = re.search(r'levels\s*=\s*(\[.*?\]|list\(.*?\))', attribute_block)
+                    levels_match = re.search(r'levels\s*=\s*(\[.*?\]|list\(.*?\))', attribute_block)    
                     if name_match and levels_match:
                         attr_name = name_match.group(1)
                         levels = levels_match.group(1)
