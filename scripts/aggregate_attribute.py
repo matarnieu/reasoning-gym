@@ -3,6 +3,7 @@ from glob import glob
 import re
 from typing import List
 import json
+import ast
 
 def extract_config_and_levels(lines: List[str], file: str) -> dict:
     """
@@ -113,7 +114,101 @@ def extract_config_and_levels(lines: List[str], file: str) -> dict:
                         result[relative_file]["levels"][attr_name] = levels
 
     return result
+                    
+def extract_level(path_task):
+    if path_task.endswith("base_conversion.py"):
+        a=0
+    curriculum_pattern = re.compile(r"class\s+(\w*Curriculum)\s*(\(.*?\))?\s*:")
+    
+    with open(path_task, encoding="utf-8") as f:
+        lines = f.readlines()
 
+    code = "".join(lines)
+    match = curriculum_pattern.search(code)
+    if not match:
+        return None
+
+    start_line = code[:match.start()].count("\n")
+    class_indent = len(lines[start_line]) - len(lines[start_line].lstrip())
+
+    end_line = start_line + 1
+    while end_line < len(lines):
+        line = lines[end_line]
+        if line.strip() == "":
+            end_line += 1
+            continue
+        indent = len(line) - len(line.lstrip())
+        if indent <= class_indent:
+            break
+        end_line += 1
+
+    class_code = "".join(lines[start_line:end_line])
+    class_node = ast.parse(class_code).body[0]
+    levels_by_attr = {}
+
+    for item in ast.walk(class_node):
+        if isinstance(item, ast.Call) and isinstance(item.func, ast.Name) and item.func.id in ("ScalarAttributeDefinition", "RangeAttributeDefinition"):
+            name = None
+            levels = None
+            for kw in item.keywords:
+                if kw.arg == "name" and isinstance(kw.value, ast.Constant):
+                    name = kw.value.value
+                elif kw.arg == "levels":
+                    try:
+                        levels = ast.literal_eval(kw.value)
+                    except Exception:
+                        levels = None
+            if name and levels is not None:
+                levels_by_attr[name] = levels
+
+    return levels_by_attr
+
+    
+def extract_config(path_task):
+    
+    class_config_pattern = re.compile(r"class\s+(\w*Config)\s*(\(.*?\))?\s*:")
+
+    with open(path_task, encoding="utf-8") as f:
+        lines = f.readlines()
+
+    code = "".join(lines)
+    match = class_config_pattern.search(code)
+
+    if not match:
+        return None
+
+    start_line = code[:match.start()].count("\n")
+    class_indent = len(lines[start_line]) - len(lines[start_line].lstrip())
+
+    end_line = start_line + 1
+    while end_line < len(lines):
+        line = lines[end_line]
+        if line.strip() == "":
+            end_line += 1
+            continue
+        indent = len(line) - len(line.lstrip())
+        if indent <= class_indent:
+            break
+        end_line += 1
+
+    class_code = "".join(lines[start_line:end_line])
+    class_node = ast.parse(class_code).body[0]  
+    attributes = {}
+
+    for item in class_node.body:
+        if isinstance(item, ast.AnnAssign) and isinstance(item.target, ast.Name):
+            name = item.target.id
+            type_ = ast.unparse(item.annotation) if hasattr(ast, "unparse") else None
+            value = ast.unparse(item.value) if item.value else None
+            attributes[name] = {"type": type_, "value": value}
+        elif isinstance(item, ast.Assign):
+            for target in item.targets:
+                if isinstance(target, ast.Name):
+                    name = target.id
+                    value = ast.unparse(item.value) if hasattr(ast, "unparse") else None
+                    attributes[name] = {"type": None, "value": value}
+
+    return attributes
 
 def extract_parameters_from_first_script_in(path_tasks):
     """
@@ -126,10 +221,14 @@ def extract_parameters_from_first_script_in(path_tasks):
         dict: Aggregated config and level data across all files.
     """
     params = {}
+    marker = "reasoning_gym"
+
     for path_task in path_tasks:
-        with open(path_task, encoding='utf-8') as file:
-            lines = [line.rstrip() for line in file]
-            params_file = extract_config_and_levels(lines, path_task)
+        config = extract_config(path_task)
+        levels = extract_level(path_task)
+        parts = path_task.split(marker, maxsplit=1)
+        path = os.path.join(marker, parts[1].lstrip("\\/"))
+        params_file = {path: {"config":config, "levels":levels}}
         params.update(params_file)
     return params
 
@@ -152,7 +251,6 @@ def has_config(script_path):
             return True
     return False
 
-
 def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     task_path = os.path.join(current_dir, "..", "reasoning_gym")
@@ -168,9 +266,9 @@ def main():
     ]
 
     params = extract_parameters_from_first_script_in(script_paths)
-    with open('data.json', 'w') as fp:
-        json.dump(params, fp, indent=4, sort_keys=True)
 
-
+    with open('data.json', 'w', encoding='utf-8') as fp:
+        json.dump(params, fp, sort_keys=True, indent=2)
+        
 if __name__ == "__main__":
     main()

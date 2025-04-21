@@ -1,1465 +1,4640 @@
 {
-    "reasoning_gym\\algebra\\complex_arithmetic.py": {
-        "config": {
-            "max_imag": "10",
-            "max_real": "10",
-            "min_imag": "-10",
-            "min_real": "-10",
-            "operations": "(\"+\", \"-\", \"*\", \"/\")",
-            "operations_weights": "field(default_factory=lambda: [0.4, 0.4, 0.1, 0.1])",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "max_imag": "[10, 100, 10000, 100000000]",
-            "max_real": "[10, 100, 10000, 100000000]",
-            "min_imag": "[-10, -100, -10000, -100000000]",
-            "min_real": "[-10, -100, -10000, -100000000]",
-            "operations_weights": "[[0.4, 0.4, 0.1, 0.1]"
-        }
-    },
-    "reasoning_gym\\algebra\\intermediate_integration.py": {
-        "config": {
-            "linear_lower_bound": "1",
-            "linear_upper_bound": "10",
-            "max_linear_degree": "4",
-            "max_poly_degree": "3",
-            "min_linear_degree": "2",
-            "min_poly_degree": "1",
-            "operators": "\"+\", \"-\",",
-            "outer_constant_max": "3",
-            "outer_constant_min": "1",
-            "problem_type_weights": "field(",
-            "problem_types": "\"linear\", \"radical\", \"log_inverse_trig\", \"trigonometric\", \"polynomial_exp_trig\", \"exponential\", \"cyclic\", \"repeated_parts\",",
-            "seed": "None",
-            "size": "500",
-            "symbols": "\"x\""
-        },
-        "levels": {
-            "problem_type_weights": "[ [1, 0, 0, 0, 0, 0, 0, 0]"
-        }
-    },
-    "reasoning_gym\\algebra\\polynomial_equations.py": {
-        "config": {
-            "max_degree": "3",
-            "max_terms": "4",
-            "max_value": "100",
-            "min_degree": "1",
-            "min_terms": "2",
-            "min_value": "1"
-        },
-        "levels": {
-            "degree": "[1, 2, 3, 4]",
-            "terms": "[2, 3, 4, 5]"
-        }
-    },
-    "reasoning_gym\\algebra\\polynomial_multiplication.py": {
-        "config": {
-            "allow_cross_variable_product": "False",
-            "allow_multivariate_polynomials": "False",
-            "max_degree": "3",
-            "max_polynomials": "3",
-            "max_terms": "4",
-            "max_value": "100",
-            "min_degree": "0",
-            "min_polynomials": "2",
-            "min_terms": "2",
-            "min_value": "1",
-            "variables": "(\"x\", \"y\", \"z\")"
-        },
-        "levels": {
-            "max_degree": "[2, 4, 8, 10]",
-            "max_polynomials": "[4, 6, 8, 10]",
-            "max_terms": "[4, 8, 12, 16]",
-            "max_value": "[100, 10000, 1000000, 100000000]",
-            "min_degree": "[0, 1, 2, 3]",
-            "min_polynomials": "[2, 3, 4, 5]",
-            "min_terms": "[2, 4, 6, 8]",
-            "min_value": "[1, 10, 100, 1000]"
-        }
-    },
-    "reasoning_gym\\algebra\\simple_equations.py": {
-        "config": {
-            "max_terms": "4",
-            "max_value": "100",
-            "min_terms": "2",
-            "min_value": "1",
-            "operators": "(\"+\", \"-\", \"*\")",
-            "operators_weights": "field(default_factory=lambda: [0.4, 0.4, 0.2])",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "max_terms": "[5, 10, 15, 20]",
-            "max_value": "[100, 10000, 1000000, 100000000]",
-            "min_terms": "[2, 3, 4, 5]",
-            "min_value": "[1, 10, 100, 1000]",
-            "operators_weights": "[[0.4, 0.4, 0.2]"
-        }
-    },
-    "reasoning_gym\\algebra\\simple_integration.py": {
-        "config": {
-            "max_bounds": "10",
-            "max_degree": "10",
-            "max_terms": "5",
-            "min_bounds": "1",
-            "min_degree": "1",
-            "min_terms": "2",
-            "operators": "(\"+\", \"-\")",
-            "seed": "None",
-            "size": "500",
-            "symbols": "(\"x\", \"X\")"
-        },
-        "levels": {
-            "terms": "[2, 3, 4, 5]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\ab.py": {
-        "config": {
-            "length": "10",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "length": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\base_conversion.py": {
-        "config": {
-            "max_base": "16",
-            "max_value": "1000",
-            "min_base": "2",
-            "min_value": "0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "base": "[2, 9, 18, 27, 36]",
-            "value": "[1_000, 10_000, 100_000, 1_000_000]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\binary_alternation.py": {
-        "config": {
-            "max_n": "30",
-            "min_n": "10",
-            "p_solvable": "0.8",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 50, 500, 1000]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\binary_matrix.py": {
-        "config": {
-            "max_n": "10",
-            "min_n": "3",
-            "p_zero": "0.25",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 25, 50, 100]",
-            "p_zero": "[0.5, 0.25, 0.1, 0.05]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\caesar_cipher.py": {
-        "config": {
-            "delimiter": "\".\"",
-            "max_rotation": "25",
-            "max_words": "20",
-            "min_rotation": "1",
-            "min_words": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "rotation": "[5, 15, 25, 50]",
-            "words": "[5, 15, 25, 50]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\count_primes.py": {
-        "config": {
-            "max_n": "10_000",
-            "min_n": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 1000, 10_000, 50_000, 100_000]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\cryptarithm.py": {
-        "config": {
-            "allow_leading_zero": "False",
-            "max_words": "3",
-            "min_words": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "words": "[2, 5, 10, 50]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\game_of_life.py": {
-        "config": {
-            "filled_cells": "int(filled_cells_weights * grid_size_x * grid_size_y)",
-            "filled_cells_weights": "0.1",
-            "grid_size_x": "10",
-            "grid_size_y": "10",
-            "seed": "None",
-            "simulation_steps": "1",
-            "size": "500"
-        },
-        "levels": {
-            "filled_cells_weights": "[0.1, 0.2, 0.5, 0.8]",
-            "grid_size_x": "[10, 25, 50, 100]",
-            "grid_size_y": "[10, 25, 50, 100]",
-            "simulation_steps": "[1, 2, 5, 10]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\game_of_life_halting.py": {
-        "config": {
-            "difficulty": "1",
-            "grid_size_x": "12",
-            "grid_size_y": "12",
-            "max_simulation_steps": "20",
-            "num_oscillators": "5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "[1, 2, 3]",
-            "grid_size_x": "[10, 25, 50, 100]",
-            "grid_size_y": "[10, 25, 50, 100]",
-            "max_simulation_steps": "[20, 50, 100, 200]",
-            "num_oscillators": "[3, 7, 10, 20]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\graph_color.py": {
-        "config": {
-            "edge_probability": "0.1",
-            "max_num_vertices": "10",
-            "min_num_vertices": "10",
-            "num_colors": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_colors": "[5, 4, 3]",
-            "num_vertices": "[6, 10, 20, 25]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\group_anagrams.py": {
-        "config": {
-            "max_anagram_groups": "10",
-            "max_words_per_group": "5",
-            "min_anagram_groups": "2",
-            "min_words_per_group": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "anagram_groups": "[5, 10, 50, 100]",
-            "words_per_group": "[2, 5, 10]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\isomorphic_strings.py": {
-        "config": {
-            "max_string_length": "10",
-            "min_string_length": "2",
-            "p_solvable": "0.5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "string_length": "[10, 50, 100, 1000]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\jugs.py": {
-        "config": {
-            "difficulty": "10",
-            "num_jugs": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "[5, 10, 50, 100, 199]",
-            "num_jugs": "[3, 4, 5, 7]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\letter_counting.py": {
-        "config": {
-            "max_words": "15",
-            "min_words": "5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "words": "list(range(5, 20, 2)"
-        }
-    },
-    "reasoning_gym\\algorithmic\\letter_jumble.py": {
-        "config": {
-            "consecutive_words": "True",
-            "max_corruption_level": "0.9",
-            "max_word_len": "64",
-            "max_words": "20",
-            "min_corruption_level": "0.1",
-            "min_word_len": "1",
-            "min_words": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "corruption_level": "[0.1, 0.3, 0.6, 0.9]",
-            "word_len": "[5, 10, 15, 30, 50]",
-            "words": "[5, 10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\manipulate_matrix.py": {
-        "config": {
-            "max_cols": "10",
-            "max_rows": "10",
-            "max_transforms": "10",
-            "min_cols": "2",
-            "min_rows": "2",
-            "min_transforms": "1",
-            "seed": "None",
-            "size": "500",
-            "w_cmirror": "1",
-            "w_crop": "1",
-            "w_dmirror": "1",
-            "w_hmirror": "1",
-            "w_map": "1",
-            "w_remove_every_nth_col": "1",
-            "w_remove_every_nth_row": "1",
-            "w_rotate": "1",
-            "w_vmirror": "1",
-            "w_zero_divisible": "1"
-        },
-        "levels": {
-            "cols": "[10, 25, 50, 100]",
-            "num_transforms": "[1, 3, 5, 10, 15]",
-            "rows": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\number_filtering.py": {
-        "config": {
-            "max_decimals": "4",
-            "max_numbers": "10",
-            "max_value": "100.0",
-            "min_decimals": "0",
-            "min_numbers": "3",
-            "min_value": "-100.0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "decimals": "[0, 2, 4, 6]",
-            "max_value": "[100, 500, 1000, 10000]",
-            "min_value": "[-100, -500, -1000, -10000]",
-            "numbers": "[10, 50, 100, 200]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\number_sorting.py": {
-        "config": {
-            "max_decimals": "2",
-            "max_numbers": "10",
-            "max_value": "100.0",
-            "min_decimals": "0",
-            "min_numbers": "3",
-            "min_value": "-100.0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "decimals": "list(range(0, 8)",
-            "max_value": "[100, 500, 1000, 10000]",
-            "min_value": "[-100, -500, -1000, -10000]",
-            "numbers": "[10, 50, 100, 200]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\palindrome_generation.py": {
-        "config": {
-            "max_length": "10",
-            "min_length": "3",
-            "seed": "None",
-            "size": "50"
-        },
-        "levels": {
-            "length": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\palindrome_partitioning.py": {
-        "config": {
-            "max_string_len": "15",
-            "max_substring_palindrome_len": "5",
-            "min_string_len": "5",
-            "min_substring_palindrome_len": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "string_len": "[5, 10, 50, 100]",
-            "substring_palindrome_len": "[3, 5, 10, 20]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\pool_matrix.py": {
-        "config": {
-            "max_cols": "10",
-            "max_pool_size": "3",
-            "max_rows": "10",
-            "min_cols": "2",
-            "min_pool_size": "1",
-            "min_rows": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "cols": "[10, 25, 50, 100]",
-            "pool_size": "[3, 5, 7, 9]",
-            "rows": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\ransom_note.py": {
-        "config": {
-            "max_magazine_length": "30",
-            "max_note_length": "10",
-            "min_magazine_length": "2",
-            "min_note_length": "1",
-            "p_solvable": "0.5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "magazine_length": "[50, 100, 500, 1000]",
-            "note_length": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\rotate_matrix.py": {
-        "config": {
-            "max_n": "10",
-            "max_rotations": "10",
-            "min_n": "2",
-            "min_rotations": "0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 25, 50, 100]",
-            "num_rotations": "[1, 5, 10, 15, 20]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\rotten_oranges.py": {
-        "config": {
-            "max_n": "30",
-            "min_n": "10",
-            "p_oranges": "0.85",
-            "p_rotten": "0.1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\sentence_reordering.py": {
-        "config": {
-            "max_words_in_sentence": "20",
-            "min_words_in_sentence": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "words_in_sentence": "[5, 20, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\spell_backward.py": {
-        "config": {
-            "data_file": "\"words3to10.txt\"",
-            "max_word_len": "10",
-            "min_word_len": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "word_len": "list(range(3, 11, 1)"
-        }
-    },
-    "reasoning_gym\\algorithmic\\spiral_matrix.py": {
-        "config": {
-            "max_n": "10",
-            "min_n": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\string_insertion.py": {
-        "config": {
-            "max_string_length": "20",
-            "min_string_length": "5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "string_length": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\string_manipulation.py": {
-        "config": {
-            "max_num_rules": "8",
-            "max_string_length": "20",
-            "min_num_rules": "3",
-            "min_string_length": "5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_rules": "[3, 5, 10, 15, 20]",
-            "string_length": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\string_splitting.py": {
-        "config": {
-            "max_initial_machines": "5",
-            "max_iterations": "1_000",
-            "min_initial_machines": "0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "initial_machines": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\string_synthesis.py": {
-        "config": {
-            "max_initial_blocks": "5",
-            "max_iterations": "1_000",
-            "min_initial_blocks": "0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "initial_blocks": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\word_ladder.py": {
-        "config": {
-            "max_chain_length": "-1",
-            "max_word_length": "4",
-            "min_chain_length": "-1",
-            "min_word_length": "4",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "word_length": "[3, 4, 5]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\word_sequence_reversal.py": {
-        "config": {
-            "max_words": "8",
-            "min_words": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "words": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\algorithmic\\word_sorting.py": {
-        "config": {
-            "max_word_length": "12",
-            "max_words": "10",
-            "min_word_length": "3",
-            "min_words": "3",
-            "seed": "None",
-            "size": "500",
-            "transformation": "TextTransformation.ORIGINAL"
-        },
-        "levels": {
-            "num_words": "[5, 10, 25, 50, 100]",
-            "word_length": "[3, 5, 10, 15]"
-        }
-    },
-    "reasoning_gym\\arc\\arc_1d.py": {
-        "config": {
-            "max_size": "30",
-            "min_size": "10",
-            "num_train": "3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "size": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\arc\\arc_agi.py": {
-        "config": {
-            "board_format_opts": "field(default_factory=lambda: BoardFormattingOptions())",
-            "mirrors": "field(",
-            "mirrors_weights": "field(",
-            "rotations": "field(default_factory=lambda: [\"90\", \"180\", \"270\"])",
-            "seed": "None",
-            "size": "500",
-            "use_eval": "True",
-            "use_train": "True"
-        },
-        "levels": {
-            "mirrors_weights": "[ [0.3, 0.3, 0.2, 0.1, 0.1]",
-            "rotations_weights": "[ [0.3, 0.2, 0.3, 0.2]"
-        }
-    },
-    "reasoning_gym\\arc\\rearc.py": {
-        "config": {
-            "board_format_opts": "field(default_factory=lambda: BoardFormattingOptions())",
-            "diff_lb": "0",
-            "diff_ub": "0.2",
-            "max_examples": "5",
-            "min_examples": "3",
-            "pso_difficulty_ranges": "field(default_factory=lambda: PSO_DIFFICULTY_RANGES)",
-            "pso_difficulty_weights": "field(",
-            "rng_difficulty_ranges": "field(default_factory=lambda: RNG_DIFFICULTY_RANGES)",
-            "rng_difficulty_weights": "field(",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "pso_difficulty_weights": "[ [1, 0, 0, 0, 0, 0, 0, 0]",
-            "rng_difficulty_weights": "[ [1, 0, 0, 0, 0, 0, 0, 0]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\basic_arithmetic.py": {
-        "config": {
-            "allow_negation": "True",
-            "allow_parentheses": "True",
-            "format_style": "\"simple\"",
-            "max_digits": "4",
-            "max_terms": "6",
-            "min_digits": "1",
-            "min_terms": "2",
-            "operators": "(\"+\", \"-\", \"*\", \"/\")",
-            "seed": "None",
-            "size": "500",
-            "whitespace": "\"single\""
-        },
-        "levels": {
-            "num_digits": "[1, 2, 5, 10]",
-            "num_terms": "[2, 5, 10, 15]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\bitwise_arithmetic.py": {
-        "config": {
-            "difficulty": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "list(range(1, 11)"
-        }
-    },
-    "reasoning_gym\\arithmetic\\calendar_arithmetic.py": {
-        "config": {
-            "leap_year_range": "200",
-            "offset_upper_bound": "100",
-            "seed": "42",
-            "size": "500",
-            "tasks": "None",
-            "year": "2022"
-        },
-        "levels": {
-            "offset_upper_bound": "[30, 100, 250, 365]",
-            "tasks": "[ [\"weekday_of_date\"]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\chain_sum.py": {
-        "config": {
-            "allow_negation": "False",
-            "max_digits": "4",
-            "max_terms": "6",
-            "min_digits": "1",
-            "min_terms": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_digits": "list(range(1, 11)",
-            "num_terms": "list(range(2, 13)"
-        }
-    },
-    "reasoning_gym\\arithmetic\\count_bits.py": {
-        "config": {
-            "max_n": "2**31 - 1",
-            "min_n": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[10, 1_000, 1_000_000, 100_000_000, 2**31 - 1]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\decimal_arithmetic.py": {
-        "config": {
-            "expr": "build_grouped_expression(operands, operators, rng)",
-            "left": "_eval_ast(node.left)",
-            "left_expr": "build_grouped_expression(operands[:split], operators[: split - 1], rng)",
-            "max_integer_part": "10",
-            "max_num_decimal_places": "3",
-            "max_terms": "6",
-            "max_value": "max_integer_part * (10**ndp)",
-            "min_num_decimal_places": "3",
-            "min_terms": "2",
-            "ndp": "rng.randint(min_num_decimal_places, max_num_decimal_places)",
-            "num": "Decimal(raw_int) / (Decimal(10) ** ndp)",
-            "num_str": "f\"{num:.{ndp}f}\"",
-            "op": "rng.choice(operations)",
-            "operand": "_eval_ast(node.operand)",
-            "operands": "[]",
-            "operations": "None,",
-            "operators": "[]",
-            "precision": "12",
-            "problem_str": "expr + \" = ?\"",
-            "quantize_str": "\"1.\" + \"0\" * ndp",
-            "raw_int": "rng.randint(1, max_value)",
-            "right": "_eval_ast(node.right)",
-            "right_expr": "build_grouped_expression(operands[split:], operators[split:], rng)",
-            "seed": "None",
-            "size": "500",
-            "split": "rng.randint(1, len(operands) - 1)",
-            "str": "?\"",
-            "terms": "2,",
-            "tree": "ast.parse(expr, mode=\"eval\")"
-        },
-        "levels": {
-            "decimal_places": "[3, 5, 8, 10]",
-            "num_terms": "[2, 5, 8, 10]",
-            "precision": "[5, 7, 10, 12]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\decimal_chain_sum.py": {
-        "config": {
-            "allow_negation": "False",
-            "max_decimal_places": "4",
-            "max_digits": "4",
-            "max_terms": "6",
-            "min_decimal_places": "1",
-            "min_digits": "1",
-            "min_terms": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "decimal_places": "[1, 2, 4, 6, 8]",
-            "num_digits": "[1, 2, 4, 8, 10]",
-            "num_terms": "[2, 5, 8, 10]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\dice.py": {
-        "config": {
-            "max_dice_size": "20",
-            "num_dice": "4",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "max_dice_size": "[20, 25, 30, 35]",
-            "num_dice": "[4, 6, 8, 10]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\fraction_simplification.py": {
-        "config": {
-            "max_factor": "100",
-            "max_value": "1000",
-            "min_factor": "1",
-            "min_value": "1",
-            "seed": "None",
-            "size": "500",
-            "styles": "(\"plain\", \"latex_inline\", \"latex_frac\", \"latex_dfrac\")"
-        },
-        "levels": {
-            "factor": "[1, 10, 100, 1000]",
-            "value": "[1, 100, 1000, 10000]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\gcd.py": {
-        "config": {
-            "max_numbers": "2",
-            "max_value": "1000",
-            "min_numbers": "2",
-            "min_value": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_terms": "[2, 3, 4, 5]",
-            "value": "[100, 1000, 10000, 100000]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\gsm_symbolic\\gsm_symbolic.py": {
-        "config": {
-            "difficulty": "1.0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {}
-    },
-    "reasoning_gym\\arithmetic\\lcm.py": {
-        "config": {
-            "max_numbers": "2",
-            "max_value": "100",
-            "min_numbers": "2",
-            "min_value": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "numbers": "[2, 3, 4, 5]",
-            "value": "[100, 1000, 10000, 100000]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\leg_counting.py": {
-        "config": {
-            "max_animals": "10",
-            "max_instances": "15",
-            "min_animals": "3",
-            "min_instances": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_animals": "list(range(1, 37)",
-            "num_instances": "[2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\number_format.py": {
-        "config": {
-            "max_delta": "10.0",
-            "max_n": "1_000_000_000",
-            "max_num_candidates": "5",
-            "min_n": "1_000",
-            "min_num_candidates": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "max_delta": "[1e1, 1e0, 1e-3, 1e-6]",
-            "n": "[1_000, 100_000, 1_000_000, 1_000_000_000]",
-            "num_candidates": "[5, 25, 100, 500]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\power_function.py": {
-        "config": {
-            "max_base": "1e3",
-            "max_exponent": "8",
-            "min_base": "-1e3",
-            "min_exponent": "0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "exponent": "[2, 4, 6, 8, 10]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\prime_factorization.py": {
-        "config": {
-            "max_value": "1000",
-            "min_value": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "value": "[10, 1_000, 5_000, 10_000]"
-        }
-    },
-    "reasoning_gym\\arithmetic\\products.py": {
-        "config": {
-            "allow_negation": "False",
-            "max_digits": "5",
-            "max_terms": "2",
-            "min_digits": "1",
-            "min_terms": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_digits": "list(range(1, 11)",
-            "num_terms": "list(range(2, 13)"
-        }
-    },
-    "reasoning_gym\\arithmetic\\time_intervals.py": {
-        "config": {
-            "max_date": "date(3000, 1, 1)",
-            "max_date_difference_days": "100",
-            "max_time": "time.max",
-            "max_time_difference_seconds": "24 * 60 * 60",
-            "min_date": "date(1900, 1, 1)",
-            "min_time": "time.min",
-            "seed": "None",
-            "size": "500",
-            "task_types": "field("
-        },
-        "levels": {
-            "max_date_difference_days": "[1, 7, 30, 365, 5 * 365]",
-            "max_time_difference_seconds": "[60, 60 * 60, 3 * 60 * 60, 6 * 60 * 60, 9 * 60 * 60, 12 * 60 * 60, 24 * 60 * 60]"
-        }
-    },
-    "reasoning_gym\\coaching\\curriculum_config.py": {
-        "config": {
-            "weight": "1.0"
-        },
-        "levels": {}
-    },
-    "reasoning_gym\\code\\bf.py": {
-        "config": {
-            "difficulty": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "[1, 2, 3]"
-        }
-    },
-    "reasoning_gym\\code\\codeio.py": {
-        "config": {
-            "difficulty": "None",
-            "input_prediction_probability": "0.5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "[6, 7, 8, 9]"
-        }
-    },
-    "reasoning_gym\\cognition\\color_cube_rotation.py": {
-        "config": {
-            "max_rotations": "3",
-            "min_rotations": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "rotations": "[1, 5, 10, 50, 100]"
-        }
-    },
-    "reasoning_gym\\cognition\\figlet_fonts.py": {
-        "config": {
-            "max_word_len": "7",
-            "min_word_len": "3",
-            "seed": "None",
-            "size": "500",
-            "space_letters": "True",
-            "static_font": "None",
-            "static_word": "None"
-        },
-        "levels": {
-            "word_len": "[3, 5, 10, 15, 20, 30]"
-        }
-    },
-    "reasoning_gym\\cognition\\modulo_grid.py": {
-        "config": {
-            "max_divisor": "20",
-            "max_holes": "1",
-            "max_target": "20",
-            "seed": "None",
-            "size": "500",
-            "size_x": "20",
-            "size_y": "20"
-        },
-        "levels": {
-            "max_divisor": "[3, 5, 7, 15, 17, 49]",
-            "max_holes": "[1, 5, 10, 15]",
-            "max_target": "[1, 0, 3, 7, 9, 21]",
-            "size_x": "[20, 40, 60, 80]",
-            "size_y": "[20, 40, 60, 80]"
-        }
-    },
-    "reasoning_gym\\cognition\\needle_haystack.py": {
-        "config": {
-            "max_num_statements": "100",
-            "min_num_statements": "10",
-            "seed": "None",
-            "size": "500",
-            "triplets": "[]"
-        },
-        "levels": {
-            "num_statements": "[10, 100, 500, 1000]"
-        }
-    },
-    "reasoning_gym\\cognition\\number_sequences.py": {
-        "config": {
-            "max_complexity": "3",
-            "max_terms": "8",
-            "max_value": "100",
-            "min_terms": "4",
-            "min_value": "-100",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "max_complexity": "[2, 3, 4, 5]",
-            "max_value": "[100, 500, 1000, 10000]",
-            "min_value": "[-100, -500, -1000, -10000]",
-            "terms": "[4, 8, 12, 16]"
-        }
-    },
-    "reasoning_gym\\cognition\\rectangle_count.py": {
-        "config": {
-            "height": "80",
-            "max_rectangles": "10",
-            "seed": "None",
-            "size": "500",
-            "width": "80"
-        },
-        "levels": {
-            "max_rectangles": "[5, 10, 15, 20, 25]"
-        }
-    },
-    "reasoning_gym\\cognition\\rubiks_cube.py": {
-        "config": {
-            "cube_size": "3",
-            "max_scramble_steps": "10",
-            "min_scramble_steps": "3",
-            "remove_ansi": "True",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "cube_size": "[3, 4, 5, 6, 7]",
-            "scramble_steps": "[3, 10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\games\\boxnet.py": {
-        "config": {
-            "colour_list": "field(default_factory=lambda: [\"red\", \"blue\", \"green\"])",
-            "max_box_num": "1",
-            "max_column_num": "4",
-            "max_row_num": "4",
-            "min_box_num": "1",
-            "min_column_num": "2",
-            "min_row_num": "1",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "box_num": "list(range(1, 10)",
-            "column_num": "list(range(1, 10)",
-            "row_num": "list(range(1, 10)"
-        }
-    },
-    "reasoning_gym\\games\\countdown.py": {
-        "config": {
-            "max_numbers": "6",
-            "max_target": "999",
-            "max_value": "100",
-            "min_numbers": "4",
-            "min_target": "100",
-            "min_value": "1",
-            "operators": "(\"+\", \"-\", \"*\", \"/\")",
-            "seed": "None",
-            "shuffle": "True",
-            "size": "500"
-        },
-        "levels": {
-            "numbers": "[3, 6, 9, 12, 15]",
-            "target": "[100, 500, 1000, 5000, 10000]",
-            "value": "[1, 100, 250, 500, 1000]"
-        }
-    },
-    "reasoning_gym\\games\\emoji_mystery.py": {
-        "config": {
-            "max_words_in_sentence": "35",
-            "min_words_in_sentence": "3",
-            "seed": "None",
-            "size": "1000"
-        },
-        "levels": {
-            "num_words_in_sentence": "[5, 10, 20, 30, 40, 50]"
-        }
-    },
-    "reasoning_gym\\games\\futoshiki.py": {
-        "config": {
-            "max_board_size": "9",
-            "max_difficulty": "3",
-            "min_board_size": "4",
-            "min_difficulty": "0",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "board_size": "[4, 6, 7, 9]",
-            "difficulty": "[0, 1, 2, 3]"
-        }
-    },
-    "reasoning_gym\\games\\knight_swap.py": {
-        "config": {
-            "impossible_ratio": "0.2",
-            "max_attempts": "100",
-            "max_nodes": "9",
-            "max_pieces": "2",
-            "max_steps": "20",
-            "min_nodes": "6",
-            "min_pieces": "2",
-            "min_steps": "4",
-            "seed": "None",
-            "size": "5"
-        },
-        "levels": {
-            "nodes": "[4, 6, 8, 10, 12]",
-            "pieces": "[2, 3, 4, 5, 6]",
-            "steps": "[1, 10, 20, 30]"
-        }
-    },
-    "reasoning_gym\\games\\mahjong.py": {
-        "config": {
-            "max_num_rounds": "50",
-            "min_num_rounds": "10",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_rounds": "[10, 50, 100, 500]"
-        }
-    },
-    "reasoning_gym\\games\\maze.py": {
-        "config": {
-            "max_dist": "10",
-            "max_grid_size": "10",
-            "min_dist": "5",
-            "min_grid_size": "5",
-            "seed": "None",
-            "size": "50"
-        },
-        "levels": {
-            "dist": "[10, 25, 50, 100]",
-            "grid_size": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\games\\mini_sudoku.py": {
-        "config": {
-            "max_empty": "12",
-            "min_empty": "8",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "empty": "[4, 6, 8, 10, 12]"
-        }
-    },
-    "reasoning_gym\\games\\n_queens.py": {
-        "config": {
-            "max_remove": "7",
-            "min_remove": "1",
-            "n": "8",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "n": "[4, 6, 8, 10, 12]",
-            "num_removed": "[2, 4, 6, 8, 10]"
-        }
-    },
-    "reasoning_gym\\games\\puzzle24.py": {
-        "config": {
-            "max_value": "10",
-            "min_value": "1",
-            "operators": "(\"+\", \"-\", \"*\", \"/\")",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "value": "[1, 5, 6, 7, 8, 9, 10]"
-        }
-    },
-    "reasoning_gym\\games\\rush_hour.py": {
-        "config": {
-            "column_masks": "[]",
-            "max_moves": "50",
-            "min_moves": "1",
-            "row_masks": "[]",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "moves": "[5, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\games\\sokoban.py": {
-        "config": {
-            "max_boxes": "10",
-            "max_depth": "80",
-            "max_h": "10",
-            "max_w": "10",
-            "min_boxes": "4",
-            "min_h": "6",
-            "min_w": "6",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "height": "list(range(6, 20)",
-            "width": "list(range(6, 20)"
-        }
-    },
-    "reasoning_gym\\games\\sudoku.py": {
-        "config": {
-            "max_empty": "50",
-            "min_empty": "30",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "empty": "[20, 30, 40, 50, 60]"
-        }
-    },
-    "reasoning_gym\\games\\tower_of_hanoi.py": {
-        "config": {
-            "max_disks": "7",
-            "max_pegs": "4",
-            "min_disks": "3",
-            "min_pegs": "3",
-            "seed": "None",
-            "size": "500",
-            "visualize": "False"
-        },
-        "levels": {
-            "num_disks": "[3, 5, 10, 15]",
-            "num_pegs": "[3, 4, 5]"
-        }
-    },
-    "reasoning_gym\\games\\tsumego.py": {
-        "config": {
-            "max_board_size": "13",
-            "max_stones": "15",
-            "min_board_size": "9",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "board_size": "[5, 10, 15, 19]",
-            "max_stones": "[5, 10, 13, 15]"
-        }
-    },
-    "reasoning_gym\\geometry\\advanced_geometry.py": {
-        "config": {
-            "max_coord": "10",
-            "min_coord": "-10",
-            "seed": "None",
-            "size": "50",
-            "task_types": "field( \"orthocenter\", \"incircle_radius\", \"angle_measure\", ]"
-        },
-        "levels": {
-            "max_coord": "[10, 100, 1000, 10000]",
-            "min_coord": "[-10, -100, -1000, -10000]"
-        }
-    },
-    "reasoning_gym\\geometry\\simple_geometry.py": {
-        "config": {
-            "max_angle": "170",
-            "max_sides": "6",
-            "min_angle": "10",
-            "min_sides": "3",
-            "seed": "None",
-            "size": "100"
-        },
-        "levels": {
-            "sides": "[5, 10, 15, 30]"
-        }
-    },
-    "reasoning_gym\\graphs\\course_schedule.py": {
-        "config": {
-            "max_cycle_length": "5",
-            "max_num_courses": "10",
-            "max_num_prerequisites": "2",
-            "min_cycle_length": "3",
-            "min_num_courses": "5",
-            "min_num_prerequisites": "1",
-            "p_solvable": "0.5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "cycle_length": "[3, 4, 5, 6]",
-            "num_courses": "[5, 10, 25, 50, 100]",
-            "num_prerequisites": "[2, 3, 4, 5]"
-        }
-    },
-    "reasoning_gym\\graphs\\family_relationships.py": {
-        "config": {
-            "female_names": "field( \"Mary\", \"Patricia\", \"Jennifer\", \"Linda\", \"Elizabeth\", \"Barbara\", \"Susan\", \"Jessica\", \"Sarah\", \"Karen\", \"Emma\", \"Lisa\", \"Anna\", \"Margaret\", \"Victoria\", \"Charlotte\", \"Sophia\", \"Isabella\", \"Olivia\", \"Ava\", \"Mia\", \"Emily\", \"Abigail\", \"Amelia\", \"Eleanor\", \"Grace\", \"Alice\", \"Lucy\", \"Chloe\", \"Sophie\", \"Lily\", \"Hannah\", \"Zoe\", \"Luna\", \"Nova\", \"Aria\", \"Willow\", \"Aurora\", \"Sage\", \"River\", \"Winter\", \"Sky\", \"Rain\", ]",
-            "male_names": "field( \"James\", \"John\", \"Robert\", \"Michael\", \"William\", \"David\", \"Richard\", \"Joseph\", \"Thomas\", \"Charles\", \"Peter\", \"Daniel\", \"Matthew\", \"Christopher\", \"Andrew\", \"George\", \"Edward\", \"Benjamin\", \"Henry\", \"Samuel\", \"Alexander\", \"Oliver\", \"Jack\", \"Harry\", \"Jacob\", \"Noah\", \"Ethan\", \"Lucas\", \"Mason\", \"Logan\", \"Sebastian\", \"Theodore\", \"Owen\", \"Liam\", \"Aiden\", \"Kai\", \"Jayden\", \"Zion\", \"Phoenix\", \"Atlas\", \"Axel\", \"Ryder\", \"Finn\", ]",
-            "max_family_size": "8",
-            "min_family_size": "4",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "family_size": "list(range(3, 12)"
-        }
-    },
-    "reasoning_gym\\graphs\\largest_island.py": {
-        "config": {
-            "max_cols": "10",
-            "max_island_size": "10",
-            "max_num_islands": "5",
-            "max_rows": "10",
-            "min_cols": "5",
-            "min_island_size": "0",
-            "min_num_islands": "0",
-            "min_rows": "5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "cols": "[5, 25, 50, 100]",
-            "island_size": "[5, 10, 20, 30]",
-            "num_islands": "[2, 5, 10, 20]",
-            "rows": "[5, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\graphs\\quantum_lock.py": {
-        "config": {
-            "difficulty": "10",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "list(range(1, 11)"
-        }
-    },
-    "reasoning_gym\\graphs\\shortest_path.py": {
-        "config": {
-            "max_cols": "8",
-            "max_rows": "8",
-            "min_cols": "5",
-            "min_rows": "5",
-            "p_blocked": "0.4",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "cols": "[10, 25, 50, 100]",
-            "rows": "[10, 25, 50, 100]"
-        }
-    },
-    "reasoning_gym\\induction\\acre\\acre.py": {
-        "config": {
-            "seed": "None",
-            "size": "500",
-            "train": "1"
-        },
-        "levels": {}
-    },
-    "reasoning_gym\\induction\\list_functions\\list_functions.py": {
-        "config": {
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {}
-    },
-    "reasoning_gym\\logic\\aiw.py": {
-        "config": {
-            "female_names": "field( \"Mary\", \"Patricia\", \"Jennifer\", \"Linda\", \"Elizabeth\", \"Barbara\", \"Susan\", \"Jessica\", \"Sarah\", \"Margaret\", \"Alice\", ]",
-            "male_names": "field( \"James\", \"John\", \"Robert\", \"Michael\", \"William\", \"David\", \"Richard\", \"Joseph\", \"Thomas\", \"Charles\", \"Bob\", ]",
-            "max_entities": "6",
-            "seed": "None",
-            "size": "10",
-            "task_type_weights": "field(default_factory=lambda: [1 / 3, 1 / 3, 1 / 3])",
-            "task_types": "field("
-        },
-        "levels": {
-            "num_entities": "list(range(4, 18, 2)",
-            "task_type_weights": "[ [1.0, 0.0, 0.0]"
-        }
-    },
-    "reasoning_gym\\logic\\circuit_logic.py": {
-        "config": {
-            "allow_reuse": "True",
-            "max_inputs": "4",
-            "max_terms": "5",
-            "min_inputs": "2",
-            "min_terms": "3",
-            "neg_prob": "0.3",
-            "seed": "None",
-            "size": "100"
-        },
-        "levels": {
-            "inputs": "[2, 4, 6, 8, 10]",
-            "terms": "[3, 5, 10, 20, 30]"
-        }
-    },
-    "reasoning_gym\\logic\\knights_knaves.py": {
-        "config": {
-            "depth_constraint": "2",
-            "n_people": "2",
-            "seed": "None",
-            "size": "500",
-            "width_constraint": "2"
-        },
-        "levels": {
-            "depth_constraint": "[2, 3, 4, 5]",
-            "n_people": "[2, 3, 4, 5]",
-            "width_constraint": "[2, 3, 4, 5]"
-        }
-    },
-    "reasoning_gym\\logic\\propositional_logic.py": {
-        "config": {
-            "max_complexity": "3",
-            "max_statements": "4",
-            "max_vars": "4",
-            "min_complexity": "1",
-            "min_statements": "2",
-            "min_vars": "2",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "complexity": "[1, 2, 3, 4, 5]",
-            "statements": "[2, 4, 6, 8, 10]",
-            "vars": "[2, 4, 6, 8, 10]"
-        }
-    },
-    "reasoning_gym\\logic\\self_reference.py": {
-        "config": {
-            "difficulty": "5",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "difficulty": "list(range(1, 11)"
-        }
-    },
-    "reasoning_gym\\logic\\syllogisms.py": {
-        "config": {
-            "allow_all": "True",
-            "allow_no": "True",
-            "allow_some": "True",
-            "allow_some_not": "True",
-            "invalid_ratio": "0.3",
-            "inversion_probability": "0.3",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "allow_all": "[True, True, True, True]",
-            "allow_no": "[False, True, True, True]",
-            "allow_some": "[False, False, True, True]",
-            "allow_some_not": "[False, False, False, True]"
-        }
-    },
-    "reasoning_gym\\logic\\zebra_puzzles.py": {
-        "config": {
-            "num_characteristics": "4",
-            "num_people": "4",
-            "seed": "None",
-            "size": "500"
-        },
-        "levels": {
-            "num_characteristics": "list(range(2, 8)",
-            "num_people": "list(range(2, 8)"
-        }
+  "reasoning_gym\\algebra\\complex_arithmetic.py": {
+    "config": {
+      "max_imag": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_real": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_imag": {
+        "type": "int",
+        "value": "-10"
+      },
+      "min_real": {
+        "type": "int",
+        "value": "-10"
+      },
+      "operations": {
+        "type": "tuple[str, ...]",
+        "value": "('+', '-', '*', '/')"
+      },
+      "operations_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [0.4, 0.4, 0.1, 0.1])"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "max_imag": [
+        10,
+        100,
+        10000,
+        100000000
+      ],
+      "max_real": [
+        10,
+        100,
+        10000,
+        100000000
+      ],
+      "min_imag": [
+        -10,
+        -100,
+        -10000,
+        -100000000
+      ],
+      "min_real": [
+        -10,
+        -100,
+        -10000,
+        -100000000
+      ],
+      "operations_weights": [
+        [
+          0.4,
+          0.4,
+          0.1,
+          0.1
+        ],
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.2,
+          0.2,
+          0.3,
+          0.3
+        ],
+        [
+          0.1,
+          0.1,
+          0.4,
+          0.4
+        ]
+      ]
     }
+  },
+  "reasoning_gym\\algebra\\intermediate_integration.py": {
+    "config": {
+      "linear_lower_bound": {
+        "type": "int",
+        "value": "1"
+      },
+      "linear_upper_bound": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_linear_degree": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_poly_degree": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_linear_degree": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_poly_degree": {
+        "type": "int",
+        "value": "1"
+      },
+      "operators": {
+        "type": "tuple",
+        "value": "('+', '-')"
+      },
+      "outer_constant_max": {
+        "type": "int",
+        "value": "3"
+      },
+      "outer_constant_min": {
+        "type": "int",
+        "value": "1"
+      },
+      "problem_type_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125])"
+      },
+      "problem_types": {
+        "type": "tuple",
+        "value": "('linear', 'radical', 'log_inverse_trig', 'trigonometric', 'polynomial_exp_trig', 'exponential', 'cyclic', 'repeated_parts')"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "symbols": {
+        "type": "tuple",
+        "value": "'x'"
+      }
+    },
+    "levels": {
+      "problem_type_weights": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "reasoning_gym\\algebra\\polynomial_equations.py": {
+    "config": {
+      "exp_distance_factor": {
+        "type": null,
+        "value": "-10.0"
+      },
+      "max_degree": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_degree": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "operators": {
+        "type": "tuple[str, ...]",
+        "value": "('+', '-')"
+      },
+      "penalty_extra_factor": {
+        "type": null,
+        "value": "0.5"
+      },
+      "penalty_missing_factor": {
+        "type": null,
+        "value": "0.5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "degree": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "reasoning_gym\\algebra\\polynomial_multiplication.py": {
+    "config": {
+      "allow_cross_variable_product": {
+        "type": "bool",
+        "value": "False"
+      },
+      "allow_multivariate_polynomials": {
+        "type": "bool",
+        "value": "False"
+      },
+      "max_degree": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_polynomials": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_degree": {
+        "type": "int",
+        "value": "0"
+      },
+      "min_polynomials": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "operators": {
+        "type": "tuple[str, ...]",
+        "value": "('+', '-')"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "variables": {
+        "type": "tuple[str]",
+        "value": "('x', 'y', 'z')"
+      }
+    },
+    "levels": {
+      "max_degree": [
+        2,
+        4,
+        8,
+        10
+      ],
+      "max_polynomials": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "max_terms": [
+        4,
+        8,
+        12,
+        16
+      ],
+      "max_value": [
+        100,
+        10000,
+        1000000,
+        100000000
+      ],
+      "min_degree": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "min_polynomials": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "min_terms": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "min_value": [
+        1,
+        10,
+        100,
+        1000
+      ]
+    }
+  },
+  "reasoning_gym\\algebra\\simple_equations.py": {
+    "config": {
+      "max_terms": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "operators": {
+        "type": "tuple",
+        "value": "('+', '-', '*')"
+      },
+      "operators_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [0.4, 0.4, 0.2])"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "max_terms": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "max_value": [
+        100,
+        10000,
+        1000000,
+        100000000
+      ],
+      "min_terms": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "min_value": [
+        1,
+        10,
+        100,
+        1000
+      ],
+      "operators_weights": [
+        [
+          0.4,
+          0.4,
+          0.2
+        ],
+        [
+          0.35,
+          0.35,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.4
+        ],
+        [
+          0.2,
+          0.2,
+          0.6
+        ]
+      ]
+    }
+  },
+  "reasoning_gym\\algebra\\simple_integration.py": {
+    "config": {
+      "max_bounds": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_degree": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_bounds": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_degree": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "operators": {
+        "type": "tuple",
+        "value": "('+', '-')"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "symbols": {
+        "type": "tuple",
+        "value": "('x', 'X')"
+      }
+    },
+    "levels": {
+      "terms": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\ab.py": {
+    "config": {
+      "length": {
+        "type": "int",
+        "value": "10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "length": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },  
+  "reasoning_gym\\algorithmic\\base_conversion.py": {
+    "config": {
+      "max_base": {
+        "type": "int",
+        "value": "16"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "1000"
+      },
+      "min_base": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "base": [
+        2,
+        9,
+        18,
+        27,
+        36
+      ],
+      "value": [
+        1000,
+        10000,
+        100000,
+        1000000
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\binary_alternation.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "30"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "10"
+      },
+      "p_solvable": {
+        "type": "float",
+        "value": "0.8"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        10,
+        50,
+        500,
+        1000
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\binary_matrix.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "3"
+      },
+      "p_zero": {
+        "type": "float",
+        "value": "0.25"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "p_zero": [
+        0.5,
+        0.25,
+        0.1,
+        0.05
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\caesar_cipher.py": {
+    "config": {
+      "delimiter": {
+        "type": "str",
+        "value": "'.'"
+      },
+      "max_rotation": {
+        "type": "int",
+        "value": "25"
+      },
+      "max_words": {
+        "type": "int",
+        "value": "20"
+      },
+      "min_rotation": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_words": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "rotation": [
+        5,
+        15,
+        25,
+        50
+      ],
+      "words": [
+        5,
+        15,
+        25,
+        50
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\count_primes.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "10000"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        10,
+        1000,
+        10000,
+        50000,
+        100000
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\cryptarithm.py": {
+    "config": {
+      "allow_leading_zero": {
+        "type": "bool",
+        "value": "False"
+      },
+      "max_words": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_words": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "words": [
+        2,
+        5,
+        10,
+        50
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\game_of_life.py": {
+    "config": {
+      "filled_cells": {
+        "type": "int",
+        "value": "int(filled_cells_weights * grid_size_x * grid_size_y)"
+      },
+      "filled_cells_weights": {
+        "type": "float",
+        "value": "0.1"
+      },
+      "grid_size_x": {
+        "type": "int",
+        "value": "10"
+      },
+      "grid_size_y": {
+        "type": "int",
+        "value": "10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "simulation_steps": {
+        "type": "int",
+        "value": "1"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "filled_cells_weights": [
+        0.1,
+        0.2,
+        0.5,
+        0.8
+      ],
+      "grid_size_x": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "grid_size_y": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "simulation_steps": [
+        1,
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\game_of_life_halting.py": {
+    "config": {
+      "difficulty": {
+        "type": "int",
+        "value": "1"
+      },
+      "grid_size_x": {
+        "type": "int",
+        "value": "12"
+      },
+      "grid_size_y": {
+        "type": "int",
+        "value": "12"
+      },
+      "max_simulation_steps": {
+        "type": "int",
+        "value": "20"
+      },
+      "num_oscillators": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "difficulty": [
+        1,
+        2,
+        3
+      ],
+      "grid_size_x": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "grid_size_y": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "max_simulation_steps": [
+        20,
+        50,
+        100,
+        200
+      ],
+      "num_oscillators": [
+        3,
+        7,
+        10,
+        20
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\graph_color.py": {
+    "config": {
+      "edge_probability": {
+        "type": "float",
+        "value": "0.1"
+      },
+      "max_num_vertices": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_num_vertices": {
+        "type": "int",
+        "value": "10"
+      },
+      "num_colors": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "num_colors": [
+        5,
+        4,
+        3
+      ],
+      "num_vertices": [
+        6,
+        10,
+        20,
+        25
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\group_anagrams.py": {
+    "config": {
+      "max_anagram_groups": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_words_per_group": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_anagram_groups": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_words_per_group": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "anagram_groups": [
+        5,
+        10,
+        50,
+        100
+      ],
+      "words_per_group": [
+        2,
+        5,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\isomorphic_strings.py": {
+    "config": {
+      "max_string_length": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_string_length": {
+        "type": "int",
+        "value": "2"
+      },
+      "p_solvable": {
+        "type": "float",
+        "value": "0.5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "string_length": [
+        10,
+        50,
+        100,
+        1000
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\jugs.py": {
+    "config": {
+      "difficulty": {
+        "type": "int",
+        "value": "10"
+      },
+      "num_jugs": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "difficulty": [
+        5,
+        10,
+        50,
+        100,
+        199
+      ],
+      "num_jugs": [
+        3,
+        4,
+        5,
+        7
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\letter_counting.py": {
+    "config": {
+      "max_words": {
+        "type": "int",
+        "value": "15"
+      },
+      "min_words": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\algorithmic\\letter_jumble.py": {
+    "config": {
+      "consecutive_words": {
+        "type": "bool",
+        "value": "True"
+      },
+      "max_corruption_level": {
+        "type": "float",
+        "value": "0.9"
+      },
+      "max_word_len": {
+        "type": "int",
+        "value": "64"
+      },
+      "max_words": {
+        "type": "int",
+        "value": "20"
+      },
+      "min_corruption_level": {
+        "type": "float",
+        "value": "0.1"
+      },
+      "min_word_len": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_words": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "corruption_level": [
+        0.1,
+        0.3,
+        0.6,
+        0.9
+      ],
+      "word_len": [
+        5,
+        10,
+        15,
+        30,
+        50
+      ],
+      "words": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\manipulate_matrix.py": {
+    "config": {
+      "max_cols": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_rows": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_transforms": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_cols": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_rows": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_transforms": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "w_cmirror": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_crop": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_dmirror": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_hmirror": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_map": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_remove_every_nth_col": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_remove_every_nth_row": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_rotate": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_vmirror": {
+        "type": "float",
+        "value": "1"
+      },
+      "w_zero_divisible": {
+        "type": "float",
+        "value": "1"
+      }
+    },
+    "levels": {
+      "cols": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "num_transforms": [
+        1,
+        3,
+        5,
+        10,
+        15
+      ],
+      "rows": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\number_filtering.py": {
+    "config": {
+      "max_decimals": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_numbers": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_value": {
+        "type": "float",
+        "value": "100.0"
+      },
+      "min_decimals": {
+        "type": "int",
+        "value": "0"
+      },
+      "min_numbers": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_value": {
+        "type": "float",
+        "value": "-100.0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "decimals": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "max_value": [
+        100,
+        500,
+        1000,
+        10000
+      ],
+      "min_value": [
+        -100,
+        -500,
+        -1000,
+        -10000
+      ],
+      "numbers": [
+        10,
+        50,
+        100,
+        200
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\number_sorting.py": {
+    "config": {
+      "max_decimals": {
+        "type": "int",
+        "value": "2"
+      },
+      "max_numbers": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_value": {
+        "type": "float",
+        "value": "100.0"
+      },
+      "min_decimals": {
+        "type": "int",
+        "value": "0"
+      },
+      "min_numbers": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_value": {
+        "type": "float",
+        "value": "-100.0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "max_value": [
+        100,
+        500,
+        1000,
+        10000
+      ],
+      "min_value": [
+        -100,
+        -500,
+        -1000,
+        -10000
+      ],
+      "numbers": [
+        10,
+        50,
+        100,
+        200
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\palindrome_generation.py": {
+    "config": {
+      "max_length": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_length": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "50"
+      }
+    },
+    "levels": {
+      "length": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\palindrome_partitioning.py": {
+    "config": {
+      "max_string_len": {
+        "type": "int",
+        "value": "15"
+      },
+      "max_substring_palindrome_len": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_string_len": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_substring_palindrome_len": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "string_len": [
+        5,
+        10,
+        50,
+        100
+      ],
+      "substring_palindrome_len": [
+        3,
+        5,
+        10,
+        20
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\pool_matrix.py": {
+    "config": {
+      "max_cols": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_pool_size": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_rows": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_cols": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_pool_size": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_rows": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "cols": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "pool_size": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "rows": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\ransom_note.py": {
+    "config": {
+      "max_magazine_length": {
+        "type": "int",
+        "value": "30"
+      },
+      "max_note_length": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_magazine_length": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_note_length": {
+        "type": "int",
+        "value": "1"
+      },
+      "p_solvable": {
+        "type": "float",
+        "value": "0.5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "magazine_length": [
+        50,
+        100,
+        500,
+        1000
+      ],
+      "note_length": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\rotate_matrix.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_rotations": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_rotations": {
+        "type": "int",
+        "value": "0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "num_rotations": [
+        1,
+        5,
+        10,
+        15,
+        20
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\rotten_oranges.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "30"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "10"
+      },
+      "p_oranges": {
+        "type": "float",
+        "value": "0.85"
+      },
+      "p_rotten": {
+        "type": "float",
+        "value": "0.1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\sentence_reordering.py": {
+    "config": {
+      "max_words_in_sentence": {
+        "type": "int",
+        "value": "20"
+      },
+      "min_words_in_sentence": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "words_in_sentence": [
+        5,
+        20,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\spell_backward.py": {
+    "config": {
+      "data_file": {
+        "type": "str",
+        "value": "'words3to10.txt'"
+      },
+      "max_word_len": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_word_len": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\algorithmic\\spiral_matrix.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\string_insertion.py": {
+    "config": {
+      "max_string_length": {
+        "type": "int",
+        "value": "20"
+      },
+      "min_string_length": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "string_length": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\string_manipulation.py": {
+    "config": {
+      "max_num_rules": {
+        "type": "int",
+        "value": "8"
+      },
+      "max_string_length": {
+        "type": "int",
+        "value": "20"
+      },
+      "min_num_rules": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_string_length": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "num_rules": [
+        3,
+        5,
+        10,
+        15,
+        20
+      ],
+      "string_length": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\string_splitting.py": {
+    "config": {
+      "max_initial_machines": {
+        "type": "int",
+        "value": "5"
+      },
+      "max_iterations": {
+        "type": "int",
+        "value": "1000"
+      },
+      "min_initial_machines": {
+        "type": "int",
+        "value": "0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "initial_machines": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\string_synthesis.py": {
+    "config": {
+      "max_initial_blocks": {
+        "type": "int",
+        "value": "5"
+      },
+      "max_iterations": {
+        "type": "int",
+        "value": "1000"
+      },
+      "min_initial_blocks": {
+        "type": "int",
+        "value": "0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "initial_blocks": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\word_ladder.py": {
+    "config": {
+      "max_chain_length": {
+        "type": "int",
+        "value": "-1"
+      },
+      "max_word_length": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_chain_length": {
+        "type": "int",
+        "value": "-1"
+      },
+      "min_word_length": {
+        "type": "int",
+        "value": "4"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "word_length": [
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\word_sequence_reversal.py": {
+    "config": {
+      "max_words": {
+        "type": "int",
+        "value": "8"
+      },
+      "min_words": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "words": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\algorithmic\\word_sorting.py": {
+    "config": {
+      "max_word_length": {
+        "type": "int",
+        "value": "12"
+      },
+      "max_words": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_word_length": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_words": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "transformation": {
+        "type": "TextTransformation",
+        "value": "TextTransformation.ORIGINAL"
+      }
+    },
+    "levels": {
+      "num_words": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "word_length": [
+        3,
+        5,
+        10,
+        15
+      ]
+    }
+  },
+  "reasoning_gym\\arc\\arc_1d.py": {
+    "config": {
+      "max_size": {
+        "type": "int",
+        "value": "30"
+      },
+      "min_size": {
+        "type": "int",
+        "value": "10"
+      },
+      "num_train": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "size": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\arc\\arc_agi.py": {
+    "config": {
+      "board_format_opts": {
+        "type": "BoardFormattingOptions",
+        "value": "field(default_factory=lambda: BoardFormattingOptions())"
+      },
+      "mirrors": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['horizontal', 'vertical', 'diagonal', 'counterdiagonal'])"
+      },
+      "mirrors_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [0.2, 0.2, 0.2, 0.2, 0.2])"
+      },
+      "rotations": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['90', '180', '270'])"
+      },
+      "rotations_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [0.25, 0.25, 0.25, 0.25])"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "shuffle_example_order": {
+        "type": "bool",
+        "value": "True"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "use_color_permutation": {
+        "type": "bool",
+        "value": "True"
+      },
+      "use_eval": {
+        "type": "bool",
+        "value": "True"
+      },
+      "use_train": {
+        "type": "bool",
+        "value": "True"
+      }
+    },
+    "levels": {
+      "mirrors_weights": [
+        [
+          0.3,
+          0.3,
+          0.2,
+          0.1,
+          0.1
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.1,
+          0.1,
+          0.2,
+          0.3,
+          0.3
+        ],
+        [
+          0.05,
+          0.05,
+          0.1,
+          0.4,
+          0.4
+        ]
+      ],
+      "rotations_weights": [
+        [
+          0.3,
+          0.2,
+          0.3,
+          0.2
+        ],
+        [
+          0.15,
+          0.3,
+          0.25,
+          0.3
+        ],
+        [
+          0.1,
+          0.35,
+          0.2,
+          0.35
+        ],
+        [
+          0.0,
+          0.4,
+          0.2,
+          0.4
+        ]
+      ]
+    }
+  },
+  "reasoning_gym\\arc\\rearc.py": {
+    "config": {
+      "board_format_opts": {
+        "type": "BoardFormattingOptions",
+        "value": "field(default_factory=lambda: BoardFormattingOptions())"
+      },
+      "diff_lb": {
+        "type": "int",
+        "value": "0"
+      },
+      "diff_ub": {
+        "type": "int",
+        "value": "0.2"
+      },
+      "max_examples": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_examples": {
+        "type": "int",
+        "value": "3"
+      },
+      "pso_difficulty_ranges": {
+        "type": "list[tuple[float, float]]",
+        "value": "field(default_factory=lambda: PSO_DIFFICULTY_RANGES)"
+      },
+      "pso_difficulty_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [1 / len(PSO_DIFFICULTY_RANGES)] * len(PSO_DIFFICULTY_RANGES))"
+      },
+      "rng_difficulty_ranges": {
+        "type": "list[tuple[float, float]]",
+        "value": "field(default_factory=lambda: RNG_DIFFICULTY_RANGES)"
+      },
+      "rng_difficulty_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [1 / len(RNG_DIFFICULTY_RANGES)] * len(RNG_DIFFICULTY_RANGES))"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "pso_difficulty_weights": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "rng_difficulty_weights": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\basic_arithmetic.py": {
+    "config": {
+      "allow_negation": {
+        "type": "bool",
+        "value": "True"
+      },
+      "allow_parentheses": {
+        "type": "bool",
+        "value": "True"
+      },
+      "format_style": {
+        "type": "Literal['simple', 'natural']",
+        "value": "'simple'"
+      },
+      "max_digits": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_digits": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "operators": {
+        "type": "list[str]",
+        "value": "('+', '-', '*', '/')"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "whitespace": {
+        "type": "Literal['no_space', 'single', 'random']",
+        "value": "'single'"
+      }
+    },
+    "levels": {
+      "num_digits": [
+        1,
+        2,
+        5,
+        10
+      ],
+      "num_terms": [
+        2,
+        5,
+        10,
+        15
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\bitwise_arithmetic.py": {
+    "config": {
+      "difficulty": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\arithmetic\\calendar_arithmetic.py": {
+    "config": {
+      "leap_year_range": {
+        "type": "int",
+        "value": "200"
+      },
+      "offset_upper_bound": {
+        "type": "int",
+        "value": "100"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "42"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "tasks": {
+        "type": "Optional[list[str]]",
+        "value": "None"
+      },
+      "year": {
+        "type": "int",
+        "value": "2022"
+      }
+    },
+    "levels": {
+      "offset_upper_bound": [
+        30,
+        100,
+        250,
+        365
+      ],
+      "tasks": [
+        [
+          "weekday_of_date"
+        ],
+        [
+          "weekday_of_date",
+          "is_leap_year",
+          "weekday_offset"
+        ],
+        [
+          "weekday_of_date",
+          "is_leap_year",
+          "weekday_offset",
+          "count_days",
+          "count_business_days"
+        ],
+        [
+          "weekday_of_date",
+          "is_leap_year",
+          "weekday_offset",
+          "count_days",
+          "count_business_days",
+          "weekday_of_date_from_first_date",
+          "recurring_event_day"
+        ]
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\chain_sum.py": {
+    "config": {
+      "allow_negation": {
+        "type": "bool",
+        "value": "False"
+      },
+      "max_digits": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_digits": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\arithmetic\\count_bits.py": {
+    "config": {
+      "max_n": {
+        "type": "int",
+        "value": "2 ** 31 - 1"
+      },
+      "min_n": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\arithmetic\\decimal_arithmetic.py": {
+    "config": {
+      "max_num_decimal_places": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_num_decimal_places": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "precision": {
+        "type": "int",
+        "value": "12"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "decimal_places": [
+        3,
+        5,
+        8,
+        10
+      ],
+      "num_terms": [
+        2,
+        5,
+        8,
+        10
+      ],
+      "precision": [
+        5,
+        7,
+        10,
+        12
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\decimal_chain_sum.py": {
+    "config": {
+      "allow_negation": {
+        "type": "bool",
+        "value": "False"
+      },
+      "max_decimal_places": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_digits": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_decimal_places": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_digits": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "decimal_places": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "num_digits": [
+        1,
+        2,
+        4,
+        8,
+        10
+      ],
+      "num_terms": [
+        2,
+        5,
+        8,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\dice.py": {
+    "config": {
+      "max_dice_size": {
+        "type": "int",
+        "value": "20"
+      },
+      "num_dice": {
+        "type": "int",
+        "value": "4"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "max_dice_size": [
+        20,
+        25,
+        30,
+        35
+      ],
+      "num_dice": [
+        4,
+        6,
+        8,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\fraction_simplification.py": {
+    "config": {
+      "max_factor": {
+        "type": "int",
+        "value": "100"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "1000"
+      },
+      "min_factor": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "styles": {
+        "type": "Sequence[str]",
+        "value": "('plain', 'latex_inline', 'latex_frac', 'latex_dfrac')"
+      }
+    },
+    "levels": {
+      "factor": [
+        1,
+        10,
+        100,
+        1000
+      ],
+      "value": [
+        1,
+        100,
+        1000,
+        10000
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\gcd.py": {
+    "config": {
+      "max_numbers": {
+        "type": "int",
+        "value": "2"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "1000"
+      },
+      "min_numbers": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "num_terms": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "value": [
+        100,
+        1000,
+        10000,
+        100000
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\gsm_symbolic\\gsm_symbolic.py": {
+    "config": {
+      "difficulty": {
+        "type": "float",
+        "value": "1.0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": null
+  },
+  "reasoning_gym\\arithmetic\\lcm.py": {
+    "config": {
+      "max_numbers": {
+        "type": "int",
+        "value": "2"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_numbers": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "numbers": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "value": [
+        100,
+        1000,
+        10000,
+        100000
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\leg_counting.py": {
+    "config": {
+      "max_animals": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_instances": {
+        "type": "int",
+        "value": "15"
+      },
+      "min_animals": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_instances": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "num_instances": [
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\number_format.py": {
+    "config": {
+      "max_delta": {
+        "type": "float",
+        "value": "10.0"
+      },
+      "max_n": {
+        "type": "float",
+        "value": "1000000000"
+      },
+      "max_num_candidates": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_n": {
+        "type": "float",
+        "value": "1000"
+      },
+      "min_num_candidates": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "max_delta": [
+        10.0,
+        1.0,
+        0.001,
+        1e-06
+      ],
+      "n": [
+        1000,
+        100000,
+        1000000,
+        1000000000
+      ],
+      "num_candidates": [
+        5,
+        25,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\power_function.py": {
+    "config": {
+      "max_base": {
+        "type": "float",
+        "value": "1000.0"
+      },
+      "max_exponent": {
+        "type": "int",
+        "value": "8"
+      },
+      "min_base": {
+        "type": "float",
+        "value": "-1000.0"
+      },
+      "min_exponent": {
+        "type": "int",
+        "value": "0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "exponent": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\prime_factorization.py": {
+    "config": {
+      "max_value": {
+        "type": "int",
+        "value": "1000"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "value": [
+        10,
+        1000,
+        5000,
+        10000
+      ]
+    }
+  },
+  "reasoning_gym\\arithmetic\\products.py": {
+    "config": {
+      "allow_negation": {
+        "type": "bool",
+        "value": "False"
+      },
+      "max_digits": {
+        "type": "int",
+        "value": "5"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_digits": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\arithmetic\\time_intervals.py": {
+    "config": {
+      "max_date": {
+        "type": "date",
+        "value": "date(3000, 1, 1)"
+      },
+      "max_date_difference_days": {
+        "type": "int",
+        "value": "100"
+      },
+      "max_time": {
+        "type": "time",
+        "value": "time.max"
+      },
+      "max_time_difference_seconds": {
+        "type": "int",
+        "value": "24 * 60 * 60"
+      },
+      "min_date": {
+        "type": "date",
+        "value": "date(1900, 1, 1)"
+      },
+      "min_time": {
+        "type": "time",
+        "value": "time.min"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "task_types": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['time', 'time_seconds', 'time_ms', 'date', 'datetime', 'datetime_tz'])"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\coaching\\curriculum_config.py": {
+    "config": {
+      "attribute_levels": {
+        "type": "Dict[str, int]",
+        "value": null
+      },
+      "weight": {
+        "type": "float",
+        "value": "1.0"
+      }
+    },
+    "levels": null
+  },
+  "reasoning_gym\\code\\bf.py": {
+    "config": {
+      "difficulty": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "difficulty": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "reasoning_gym\\code\\codeio.py": {
+    "config": {
+      "difficulty": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "input_prediction_probability": {
+        "type": "float",
+        "value": "0.5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "difficulty": [
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\color_cube_rotation.py": {
+    "config": {
+      "max_rotations": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_rotations": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "rotations": [
+        1,
+        5,
+        10,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\figlet_fonts.py": {
+    "config": {
+      "max_word_len": {
+        "type": "int",
+        "value": "7"
+      },
+      "min_word_len": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "space_letters": {
+        "type": "bool",
+        "value": "True"
+      },
+      "static_font": {
+        "type": "Optional[str]",
+        "value": "None"
+      },
+      "static_word": {
+        "type": "Optional[str]",
+        "value": "None"
+      }
+    },
+    "levels": {
+      "word_len": [
+        3,
+        5,
+        10,
+        15,
+        20,
+        30
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\modulo_grid.py": {
+    "config": {
+      "max_divisor": {
+        "type": "int",
+        "value": "20"
+      },
+      "max_holes": {
+        "type": "int",
+        "value": "1"
+      },
+      "max_target": {
+        "type": "int",
+        "value": "20"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "size_x": {
+        "type": "int",
+        "value": "20"
+      },
+      "size_y": {
+        "type": "int",
+        "value": "20"
+      }
+    },
+    "levels": {
+      "max_divisor": [
+        3,
+        5,
+        7,
+        15,
+        17,
+        49
+      ],
+      "max_holes": [
+        1,
+        5,
+        10,
+        15
+      ],
+      "max_target": [
+        1,
+        0,
+        3,
+        7,
+        9,
+        21
+      ],
+      "size_x": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "size_y": [
+        20,
+        40,
+        60,
+        80
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\needle_haystack.py": {
+    "config": {
+      "max_num_statements": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_num_statements": {
+        "type": "int",
+        "value": "10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "num_statements": [
+        10,
+        100,
+        500,
+        1000
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\number_sequences.py": {
+    "config": {
+      "max_complexity": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "8"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "-100"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "max_complexity": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "max_value": [
+        100,
+        500,
+        1000,
+        10000
+      ],
+      "min_value": [
+        -100,
+        -500,
+        -1000,
+        -10000
+      ],
+      "terms": [
+        4,
+        8,
+        12,
+        16
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\rectangle_count.py": {
+    "config": {
+      "height": {
+        "type": "int",
+        "value": "80"
+      },
+      "max_rectangles": {
+        "type": "int",
+        "value": "10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "width": {
+        "type": "int",
+        "value": "80"
+      }
+    },
+    "levels": {
+      "max_rectangles": [
+        5,
+        10,
+        15,
+        20,
+        25
+      ]
+    }
+  },
+  "reasoning_gym\\cognition\\rubiks_cube.py": {
+    "config": {
+      "cube_size": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_scramble_steps": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_scramble_steps": {
+        "type": "int",
+        "value": "3"
+      },
+      "remove_ansi": {
+        "type": "bool",
+        "value": "True"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "cube_size": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scramble_steps": [
+        3,
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\games\\boxnet.py": {
+    "config": {
+      "colour_list": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['red', 'blue', 'green'])"
+      },
+      "max_box_num": {
+        "type": "int",
+        "value": "1"
+      },
+      "max_column_num": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_row_num": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_box_num": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_column_num": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_row_num": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\games\\countdown.py": {
+    "config": {
+      "max_numbers": {
+        "type": "int",
+        "value": "6"
+      },
+      "max_target": {
+        "type": "int",
+        "value": "999"
+      },
+      "max_value": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_numbers": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_target": {
+        "type": "int",
+        "value": "100"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "operators": {
+        "type": "tuple",
+        "value": "('+', '-', '*', '/')"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "shuffle": {
+        "type": "bool",
+        "value": "True"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "numbers": [
+        3,
+        6,
+        9,
+        12,
+        15
+      ],
+      "target": [
+        100,
+        500,
+        1000,
+        5000,
+        10000
+      ],
+      "value": [
+        1,
+        100,
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  "reasoning_gym\\games\\emoji_mystery.py": {
+    "config": {
+      "max_words_in_sentence": {
+        "type": "int",
+        "value": "35"
+      },
+      "min_words_in_sentence": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "1000"
+      }
+    },
+    "levels": {
+      "num_words_in_sentence": [
+        5,
+        10,
+        20,
+        30,
+        40,
+        50
+      ]
+    }
+  },
+  "reasoning_gym\\games\\futoshiki.py": {
+    "config": {
+      "max_board_size": {
+        "type": "int",
+        "value": "9"
+      },
+      "max_difficulty": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_board_size": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_difficulty": {
+        "type": "int",
+        "value": "0"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "board_size": [
+        4,
+        6,
+        7,
+        9
+      ],
+      "difficulty": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "reasoning_gym\\games\\knight_swap.py": {
+    "config": {
+      "impossible_ratio": {
+        "type": "float",
+        "value": "0.2"
+      },
+      "max_attempts": {
+        "type": "int",
+        "value": "100"
+      },
+      "max_nodes": {
+        "type": "int",
+        "value": "9"
+      },
+      "max_pieces": {
+        "type": "int",
+        "value": "2"
+      },
+      "max_steps": {
+        "type": "int",
+        "value": "20"
+      },
+      "min_nodes": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_pieces": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_steps": {
+        "type": "int",
+        "value": "4"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "5"
+      }
+    },
+    "levels": {
+      "nodes": [
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "pieces": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "steps": [
+        1,
+        10,
+        20,
+        30
+      ]
+    }
+  },
+  "reasoning_gym\\games\\mahjong.py": {
+    "config": {
+      "max_num_rounds": {
+        "type": "int",
+        "value": "50"
+      },
+      "min_num_rounds": {
+        "type": "int",
+        "value": "10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "num_rounds": [
+        10,
+        50,
+        100,
+        500
+      ]
+    }
+  },
+  "reasoning_gym\\games\\maze.py": {
+    "config": {
+      "max_dist": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_grid_size": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_dist": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_grid_size": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "50"
+      }
+    },
+    "levels": {
+      "dist": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "grid_size": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\games\\mini_sudoku.py": {
+    "config": {
+      "max_empty": {
+        "type": "int",
+        "value": "12"
+      },
+      "min_empty": {
+        "type": "int",
+        "value": "8"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "empty": [
+        4,
+        6,
+        8,
+        10,
+        12
+      ]
+    }
+  },
+  "reasoning_gym\\games\\n_queens.py": {
+    "config": {
+      "max_remove": {
+        "type": "int",
+        "value": "7"
+      },
+      "min_remove": {
+        "type": "int",
+        "value": "1"
+      },
+      "n": {
+        "type": "int",
+        "value": "8"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "n": [
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "num_removed": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\games\\puzzle24.py": {
+    "config": {
+      "max_value": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_value": {
+        "type": "int",
+        "value": "1"
+      },
+      "operators": {
+        "type": "tuple",
+        "value": "('+', '-', '*', '/')"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "value": [
+        1,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\games\\rush_hour.py": {
+    "config": {
+      "max_moves": {
+        "type": "int",
+        "value": "50"
+      },
+      "min_moves": {
+        "type": "int",
+        "value": "1"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "moves": [
+        5,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\games\\sokoban.py": {
+    "config": {
+      "max_boxes": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_depth": {
+        "type": "int",
+        "value": "80"
+      },
+      "max_h": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_w": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_boxes": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_h": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_w": {
+        "type": "int",
+        "value": "6"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\games\\sudoku.py": {
+    "config": {
+      "max_empty": {
+        "type": "int",
+        "value": "50"
+      },
+      "min_empty": {
+        "type": "int",
+        "value": "30"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "empty": [
+        20,
+        30,
+        40,
+        50,
+        60
+      ]
+    }
+  },
+  "reasoning_gym\\games\\tower_of_hanoi.py": {
+    "config": {
+      "max_disks": {
+        "type": "int",
+        "value": "7"
+      },
+      "max_pegs": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_disks": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_pegs": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "visualize": {
+        "type": "bool",
+        "value": "False"
+      }
+    },
+    "levels": {
+      "num_disks": [
+        3,
+        5,
+        10,
+        15
+      ],
+      "num_pegs": [
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "reasoning_gym\\games\\tsumego.py": {
+    "config": {
+      "max_board_size": {
+        "type": "int",
+        "value": "13"
+      },
+      "max_stones": {
+        "type": "int",
+        "value": "15"
+      },
+      "min_board_size": {
+        "type": "int",
+        "value": "9"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "board_size": [
+        5,
+        10,
+        15,
+        19
+      ],
+      "max_stones": [
+        5,
+        10,
+        13,
+        15
+      ]
+    }
+  },
+  "reasoning_gym\\geometry\\advanced_geometry.py": {
+    "config": {
+      "max_coord": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_coord": {
+        "type": "int",
+        "value": "-10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "50"
+      },
+      "task_types": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['orthocenter', 'incircle_radius', 'angle_measure'])"
+      }
+    },
+    "levels": {
+      "max_coord": [
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "min_coord": [
+        -10,
+        -100,
+        -1000,
+        -10000
+      ]
+    }
+  },
+  "reasoning_gym\\geometry\\simple_geometry.py": {
+    "config": {
+      "max_angle": {
+        "type": "int",
+        "value": "170"
+      },
+      "max_sides": {
+        "type": "int",
+        "value": "6"
+      },
+      "min_angle": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_sides": {
+        "type": "int",
+        "value": "3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "100"
+      }
+    },
+    "levels": {
+      "sides": [
+        5,
+        10,
+        15,
+        30
+      ]
+    }
+  },
+  "reasoning_gym\\graphs\\course_schedule.py": {
+    "config": {
+      "max_cycle_length": {
+        "type": "int",
+        "value": "5"
+      },
+      "max_num_courses": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_num_prerequisites": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_cycle_length": {
+        "type": "int",
+        "value": "3"
+      },
+      "min_num_courses": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_num_prerequisites": {
+        "type": "int",
+        "value": "1"
+      },
+      "p_solvable": {
+        "type": "float",
+        "value": "0.5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "cycle_length": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "num_courses": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "num_prerequisites": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "reasoning_gym\\graphs\\family_relationships.py": {
+    "config": {
+      "female_names": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Barbara', 'Susan', 'Jessica', 'Sarah', 'Karen', 'Emma', 'Lisa', 'Anna', 'Margaret', 'Victoria', 'Charlotte', 'Sophia', 'Isabella', 'Olivia', 'Ava', 'Mia', 'Emily', 'Abigail', 'Amelia', 'Eleanor', 'Grace', 'Alice', 'Lucy', 'Chloe', 'Sophie', 'Lily', 'Hannah', 'Zoe', 'Luna', 'Nova', 'Aria', 'Willow', 'Aurora', 'Sage', 'River', 'Winter', 'Sky', 'Rain'])"
+      },
+      "male_names": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['James', 'John', 'Robert', 'Michael', 'William', 'David', 'Richard', 'Joseph', 'Thomas', 'Charles', 'Peter', 'Daniel', 'Matthew', 'Christopher', 'Andrew', 'George', 'Edward', 'Benjamin', 'Henry', 'Samuel', 'Alexander', 'Oliver', 'Jack', 'Harry', 'Jacob', 'Noah', 'Ethan', 'Lucas', 'Mason', 'Logan', 'Sebastian', 'Theodore', 'Owen', 'Liam', 'Aiden', 'Kai', 'Jayden', 'Zion', 'Phoenix', 'Atlas', 'Axel', 'Ryder', 'Finn'])"
+      },
+      "max_family_size": {
+        "type": "int",
+        "value": "8"
+      },
+      "min_family_size": {
+        "type": "int",
+        "value": "4"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\graphs\\largest_island.py": {
+    "config": {
+      "max_cols": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_island_size": {
+        "type": "int",
+        "value": "10"
+      },
+      "max_num_islands": {
+        "type": "int",
+        "value": "5"
+      },
+      "max_rows": {
+        "type": "int",
+        "value": "10"
+      },
+      "min_cols": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_island_size": {
+        "type": "int",
+        "value": "0"
+      },
+      "min_num_islands": {
+        "type": "int",
+        "value": "0"
+      },
+      "min_rows": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "cols": [
+        5,
+        25,
+        50,
+        100
+      ],
+      "island_size": [
+        5,
+        10,
+        20,
+        30
+      ],
+      "num_islands": [
+        2,
+        5,
+        10,
+        20
+      ],
+      "rows": [
+        5,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\graphs\\quantum_lock.py": {
+    "config": {
+      "difficulty": {
+        "type": "int",
+        "value": "10"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\graphs\\shortest_path.py": {
+    "config": {
+      "max_cols": {
+        "type": "int",
+        "value": "8"
+      },
+      "max_rows": {
+        "type": "int",
+        "value": "8"
+      },
+      "min_cols": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_rows": {
+        "type": "int",
+        "value": "5"
+      },
+      "p_blocked": {
+        "type": "float",
+        "value": "0.4"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "cols": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "rows": [
+        10,
+        25,
+        50,
+        100
+      ]
+    }
+  },
+  "reasoning_gym\\induction\\acre\\acre.py": {
+    "config": {
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "train": {
+        "type": "int",
+        "value": "1"
+      }
+    },
+    "levels": null
+  },
+  "reasoning_gym\\induction\\list_functions\\list_functions.py": {
+    "config": {
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": null
+  },
+  "reasoning_gym\\logic\\aiw.py": {
+    "config": {
+      "female_names": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Barbara', 'Susan', 'Jessica', 'Sarah', 'Margaret', 'Alice'])"
+      },
+      "male_names": {
+        "type": "list[str]",
+        "value": "field(default_factory=lambda: ['James', 'John', 'Robert', 'Michael', 'William', 'David', 'Richard', 'Joseph', 'Thomas', 'Charles', 'Bob'])"
+      },
+      "max_entities": {
+        "type": "int",
+        "value": "6"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "10"
+      },
+      "task_type_weights": {
+        "type": "list[float]",
+        "value": "field(default_factory=lambda: [1 / 3, 1 / 3, 1 / 3])"
+      },
+      "task_types": {
+        "type": "list[TaskType]",
+        "value": "field(default_factory=lambda: [TaskType.SIBLINGS, TaskType.FRIENDS, TaskType.COLLEAGUES])"
+      }
+    },
+    "levels": {
+      "task_type_weights": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.9,
+          0.05,
+          0.05
+        ],
+        [
+          0.7,
+          0.15,
+          0.15
+        ],
+        [
+          0.6,
+          0.2,
+          0.2
+        ],
+        [
+          0.5,
+          0.25,
+          0.25
+        ],
+        [
+          0.4,
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          0.35,
+          0.35
+        ],
+        [
+          0.2,
+          0.4,
+          0.4
+        ],
+        [
+          0.1,
+          0.45,
+          0.45
+        ]
+      ]
+    }
+  },
+  "reasoning_gym\\logic\\circuit_logic.py": {
+    "config": {
+      "allow_reuse": {
+        "type": "bool",
+        "value": "True"
+      },
+      "max_inputs": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_terms": {
+        "type": "int",
+        "value": "5"
+      },
+      "min_inputs": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_terms": {
+        "type": "int",
+        "value": "3"
+      },
+      "neg_prob": {
+        "type": "float",
+        "value": "0.3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "100"
+      }
+    },
+    "levels": {
+      "inputs": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "terms": [
+        3,
+        5,
+        10,
+        20,
+        30
+      ]
+    }
+  },
+  "reasoning_gym\\logic\\knights_knaves.py": {
+    "config": {
+      "depth_constraint": {
+        "type": "int",
+        "value": "2"
+      },
+      "n_people": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      },
+      "width_constraint": {
+        "type": "int",
+        "value": "2"
+      }
+    },
+    "levels": {
+      "depth_constraint": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "n_people": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "width_constraint": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "reasoning_gym\\logic\\propositional_logic.py": {
+    "config": {
+      "max_complexity": {
+        "type": "int",
+        "value": "3"
+      },
+      "max_statements": {
+        "type": "int",
+        "value": "4"
+      },
+      "max_vars": {
+        "type": "int",
+        "value": "4"
+      },
+      "min_complexity": {
+        "type": "int",
+        "value": "1"
+      },
+      "min_statements": {
+        "type": "int",
+        "value": "2"
+      },
+      "min_vars": {
+        "type": "int",
+        "value": "2"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "complexity": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "statements": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "vars": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    }
+  },
+  "reasoning_gym\\logic\\self_reference.py": {
+    "config": {
+      "difficulty": {
+        "type": "int",
+        "value": "5"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  },
+  "reasoning_gym\\logic\\syllogisms.py": {
+    "config": {
+      "allow_all": {
+        "type": "bool",
+        "value": "True"
+      },
+      "allow_no": {
+        "type": "bool",
+        "value": "True"
+      },
+      "allow_some": {
+        "type": "bool",
+        "value": "True"
+      },
+      "allow_some_not": {
+        "type": "bool",
+        "value": "True"
+      },
+      "invalid_ratio": {
+        "type": "float",
+        "value": "0.3"
+      },
+      "inversion_probability": {
+        "type": "float",
+        "value": "0.3"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {
+      "allow_all": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "allow_no": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "allow_some": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "allow_some_not": [
+        false,
+        false,
+        false,
+        true
+      ]
+    }
+  },
+  "reasoning_gym\\logic\\zebra_puzzles.py": {
+    "config": {
+      "num_characteristics": {
+        "type": "int",
+        "value": "4"
+      },
+      "num_people": {
+        "type": "int",
+        "value": "4"
+      },
+      "seed": {
+        "type": "Optional[int]",
+        "value": "None"
+      },
+      "size": {
+        "type": "int",
+        "value": "500"
+      }
+    },
+    "levels": {}
+  }
 }
