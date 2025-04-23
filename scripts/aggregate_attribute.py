@@ -6,6 +6,43 @@ import json
 import ast
                     
 def extract_level(path_task):
+    
+    def _parse_levels(node):
+        # 1. list / tuple / set
+        if isinstance(node, (ast.List, ast.Tuple, ast.Set)):
+            try:
+                return ast.literal_eval(node)
+            except Exception:
+                values = []
+                for elt in node.elts:
+                    try:
+                        values.append(ast.literal_eval(elt))
+                    except Exception:
+                        if isinstance(elt, (ast.BinOp, ast.UnaryOp, ast.Constant)):
+                            expr = ast.Expression(elt)
+                            values.append(eval(compile(expr, "", "eval"),
+                                            {"__builtins__": {}}))
+                        else:
+                            return None
+                return values
+
+        # 2. range(...)
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+                and node.func.id == "range"):
+            args = [ast.literal_eval(a) for a in node.args]
+            return list(range(*args))
+
+        # 3. list(range(...))
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+                and node.func.id == "list" and len(node.args) == 1):
+            inner = node.args[0]
+            if (isinstance(inner, ast.Call) and isinstance(inner.func, ast.Name)
+                    and inner.func.id == "range"):
+                args = [ast.literal_eval(a) for a in inner.args]
+                return list(range(*args))
+
+        return None
+
     curriculum_pattern = re.compile(r"class\s+(\w*Curriculum)\s*(\(.*?\))?\s*:")
     
     with open(path_task, encoding="utf-8") as f:
@@ -41,11 +78,10 @@ def extract_level(path_task):
             for kw in item.keywords:
                 if kw.arg == "name" and isinstance(kw.value, ast.Constant):
                     name = kw.value.value
+                
                 elif kw.arg == "levels":
-                    try:
-                        levels = ast.literal_eval(kw.value)
-                    except Exception:
-                        levels = None
+                    levels = _parse_levels(kw.value)
+
             if name and levels is not None:
                 levels_by_attr[name] = levels
 
