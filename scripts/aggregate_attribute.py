@@ -192,7 +192,8 @@ def main():
     params = extract_parameters_from_first_script_in(script_paths)
 
     with open('data.json', 'w', encoding='utf-8') as fp:
-        json.dump(params, fp, sort_keys=True, indent=2)
-        
+        #json.dump(params, fp, sort_keys=True, indent=4)
+        #json.dump(params, fp, indent=2, separators=(',', ': '), ensure_ascii=False)       
+        fp.write(json.dumps(params, indent=2, separators=(',', ': ')).replace('[\n', '[').replace('\n]', ']').replace(',\n', ', ')) 
 if __name__ == "__main__":
     main()
